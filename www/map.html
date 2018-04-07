@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+    <head>
+        <meta charset="UTF-8" />
+        
+        <!--Don't forget to fill these out!-->
+        <title>goceries</title>
+        <meta name="description" content="San Marcos Food Delivery Through Hays County Foodbank" />
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="viewport" content="width=device-width,
+                 height=device-height, user-scalable=no, initial-scale=1" />
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+        <!--Links to the main Style Sheet-->
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+	    position:static;
+        height: 100%;
+		overflow:hidden;
+		background-color: green;
+		display:flex;
+      }
+	  
+	  .wrapper{
+		height: 100%;
+	  }
+	  
+	  .body{
+		height:100%;
+		padding-top:50px;
+	  }
+	  
+	  /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+	  </style>
+        <!--Links to a modernizer JavaScript file that fixes a lot of issues with old browsers-->
+        <script src="js/modernizr.js"></script>
+        
+        <!--Makes the site so it won't scale down on small devices -->
+        
+    </head>
+
+    <body>
+	
+    <div class="wrapper">
+        <div class="topbar">
+     <div class="logowhitesmall"><img src="images/gocerieswhitesmall.png" /> </div>     
+     <a href="signin2.html"><div class="smallwhitearrow"><img src="images/arrowwhiteleft.png" /> </div> </a>  
+              
+			  </div>
+				<div class="body">
+			  <div id="map"></div>
+			  </div>
+			  </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/db.js"></script>
+	
+	<script type="text/javascript" src="js/map.js"></script>
+	
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmQkbZF1quWu2qYs8Igems_rKyezagdQE&callback=initMap">
+    </script>
+    </body>
+</html>

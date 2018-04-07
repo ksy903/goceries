@@ -1,0 +1,522 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End of Meyer Reset CSS */
+
+img {
+	max-width: 100%; /*makes images scale with flexible grids*/
+	display: block; /*removes tiny space added in some browsers below images */
+}
+
+html,body {
+
+}
+.wrapper{
+    position:static;
+    max-width: 375px;
+    background-color:
+        
+}
+
+.signin {
+    position:static;
+    background-image: url(images/backgroundsignin.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width:375px;
+    height:600px;
+}
+
+.elements {
+    position: static;
+    display:block;
+    height: 30px; 
+    padding-left:33pt;
+    padding-top: 205pt;
+}
+
+.elements2 {
+    position: static;
+    display:block;
+    height: 30px; 
+    padding-left:75pt;
+    padding-top: 36pt;
+}
+
+.topbar {
+ position: absolute;
+ background-color:#EE7126;
+    width:375px;
+    height:50px;
+}
+
+.logowhitesmall {
+    position: absolute;
+    margin-left:8rem;
+    margin-top:.5rem;
+}
+
+.smallwhitearrow {
+    position: absolute;
+    padding-top:1rem;
+    padding-left:1rem;
+    
+}
+
+.button {
+    position: static;
+    background-color: #EE7126;
+    border: none;
+    color: white;
+    margin-top: 50px;
+    margin-left:25px;
+    padding: 15px 125px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.cartbutton {
+    background-color: #94CF9B;
+    border: none;
+    color: white;
+    margin-top: 40px;
+    margin-left:50px;
+    padding: 30px 75px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.shoppingcart {
+    position:absolute;
+    float:left;
+    margin-top: 55px;
+    margin-left: 62px;
+    
+}
+
+.blurbmap {
+    position:absolute;
+    background-color: #EE7126;
+    border-radius: 10px;
+    margin-top: 450px;
+    margin-left:20px;
+    width:327px;
+    height:95px;
+    padding-left:24px;
+    padding-top: 10px;
+}
+
+.circlearrow {
+    position:absolute;
+    margin-left:255px;
+    margin-top: 23px;
+}
+
+.questionnairehead {
+    position:static;
+    width:375px;
+    height:227px;
+}
+
+.profilepic {
+    position:static;
+    padding-top:50px;
+    opacity: 0.5;
+    overflow:hidden;
+    width:375px;
+    height:135px;
+    opacity:50%;
+}
+
+.floatingtext {
+    position: absolute;
+    width: 375px;
+    padding-top:80px;
+    text-align:center;
+
+}
+
+.profilepagetext {
+    position:static;
+    margin-top:39px;
+    margin-left: 25px;
+    padding-right: 25px;
+}
+
+.allergens {
+    position:static;
+    background-color:#DFF1E0;
+    padding-left:33px;
+    padding-top:20px;
+    padding-bottom:51px;
+    margin-top:30px;
+    width: 342px;
+}
+
+.startorder {
+    position:static;
+    background-color:#94CF9A;
+    padding-top:38px;
+    padding-bottom:38px;
+    text-align:center;
+    width: 375px;
+}
+
+.instructionover {
+    position: absolute;
+    top: 0px;
+    left: 0%;
+    width: 500px;
+    z-index: 99; 
+}
+
+.instructiontext {
+    position:absolute;
+    padding-left:40px;
+    padding-top:300px;
+    text-align:center;
+}
+
+.largeplatediv{
+    position: static;
+    margin-top:2rem;
+    margin-left:25px;
+}
+.plate{
+    position:absolute;
+    
+}
+
+.dairy {
+    position:absolute;
+    float:left;
+    margin-top:8px;
+    margin-left:224px;
+    
+}
+.grains {
+    position:absolute;
+    float:left;
+    margin-left:130px;
+    margin-top: 27px;
+  
+    
+}
+.protein {
+    position:absolute;
+    float:left;
+    margin-left:130px;
+    margin-top: 155px;
+    
+    
+}
+.veggies {
+    position:absolute;
+    float:left;
+    margin-left: 10px;
+    margin-top: 137px;
+    
+    
+}
+.fruits {
+    position:absolute;
+    float:left;
+    margin-left: 10px;
+    margin-top: 25px;
+}
+
+.choose {
+    position:static;
+    
+    padding-top: 100px;
+    text-align:center;
+}
+
+.contain {
+    position:static;
+    margin-top:50px;
+    margin-left: 30px;
+}
+.contain2 {
+    position:static;
+    margin-top:60px;
+}
+
+.backgroundtruck {
+    margin-left:33px;
+}
+
+.select {
+    padding: 10px 8px 10px 14px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: absolute;
+}   
+
+.selections {
+    position: absolute;
+    margin-top: 5rem;
+    background-color: #DFF1E0;
+    border: none;
+    color: white;
+    margin-left: 2.5rem;
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.selections2 {
+    position: absolute;
+    margin-top: 10rem;
+    background-color: #DFF1E0;
+    border: none;
+    color: white;
+    margin-left: 2.5rem;
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.selections3 {
+    position: absolute;
+    margin-top: 15rem;
+    background-color: #DFF1E0;
+    border: none;
+    color: white;
+    margin-left: 2.5rem;
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.selectionimg {
+    position:static;
+    float:left;
+    margin-top:5px;
+    padding-right: 20px;
+    margin-left: 2rem;
+    
+}
+
+.delievertext {
+    position:static;
+    float:left;
+    margin-top:23px;
+    margin-left: 3rem;
+}
+
+.selecttext {
+    position:static;
+    float:left;
+    margin-top:23px;
+}
+
+.close {
+    position:absolute;
+    float:left;
+    margin-left:260px;
+    margin-top:23px;
+}
+
+.ordercontinue {
+    position: absolute;
+    background-color: #94CF9A;
+    margin-top: 26rem;
+    margin-left:40px;
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    
+}
+
+.orderback {
+    position: absolute;
+    border: line;
+    border-width:thick;
+    border-color: #94CF9A;
+    margin-top: 30rem;
+    margin-left:40px;
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    
+}
+
+.thankyoucart{
+    position:absolute;
+    margin-top: 10rem;
+    margin-left:7rem;
+}
+
+.thankyou {
+    position:absolute;
+    text-align:center;
+    margin-top: 4.5rem;
+    margin-left:6.3rem;
+}
+
+.intouch {
+     position:absolute;
+    text-align:center;
+    margin-top: 21rem;
+    margin-left:4rem;
+}
+
+
+
+/*POPUP CART*/
+/* Popup container */
+.popup {
+    
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+    visibility: hidden;
+    width: 310px;
+    background-color: #fff;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -64px;
+}
+
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+/*TEXT STYLES*/
+
+a {
+    text-decoration: none;
+}
+
+.selections2:hover {
+    background-color:#94CF9A;
+}
+
+p{
+    color:#473E3F;
+    font-family: 'Comfortaa', cursive;
+}
+
+h1 {
+    font-size:20px;
+    font-family: 'Comfortaa', cursive;
+}
+
+h2 {
+    font-size:14px;
+    font-family: 'Comfortaa', cursive;
+}
+
+h3 { 
+    font-size:16px;
+    font-family: 'Comfortaa', cursive; 
+}
+
+h4 { 
+    font-size:25px;
+    color:white;
+    font-family: 'Comfortaa', cursive; 
+}
+
+.map {
+    float:left;
+    margin-top:1rem;
+}
+
+.white {
+    color:#FFFFFF;
+}
+
+.grey {
+    color:#473E3F;
+    opacity:1;
+    text-decoration: bold;
+}
