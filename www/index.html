@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+	<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+    
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+	
+    <title>Hello World</title>
+</head>
+
+<body>
+    <div class="app">
+  <img id="image" style="position:absolute; top:10px; left:10px" src="" />
+
+  <h1>Google+ and Firebase</h1>
+
+  <div id="deviceready" class="blink">
+    <p class="event listening">Connecting to Device</p>
+    <p class="event received">Device is Ready</p>
+
+    <p id="feedback">not logged in</p>
+    <div id="show_data">Firebase data<br/>assumes you have a db with<br />songs/ id/ title: xx</div>
+    <button onclick="isAvailable()">Available?</button>
+    <button onclick="login()">Login with Google+</button>
+
+    <button onclick="window.plugins.googleplus.getSigningCertificateFingerprint(function(res){alert(res)}, function(res){alert(res)})">get cert fingerprint (Android)</button>
+  </div>
+</div>
+	
+	<script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+	
+	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+		apiKey: "AIzaSyBxKCOGXjXswfpaSoowkXOeGveRnbLabQg",
+		authDomain: "hackathon2018-200317.firebaseapp.com",
+		databaseURL: "https://hackathon2018-200317.firebaseio.com",
+		projectId: "hackathon2018-200317",
+		storageBucket: "hackathon2018-200317.appspot.com",
+		messagingSenderId: "40227347751"
+	  };
+	  
+	  
+	  app.initialize();
+	  firebase.initializeApp(config);
+	  
+	  function login() {
+		window.plugins.googleplus.login(
+			{
+					 'webClientId' : '40227347751-g170hmus9uona3aq5kld4afd9dq1ju0t.apps.googleusercontent.com',
+					 'offline': true
+			},
+			function (obj) {
+				document.querySelector("#image").src = obj.imageUrl;
+				document.querySelector("#image").style.visibility = 'visible';
+				document.querySelector("#feedback").innerHTML = "Hi, " + obj.displayName + ", " + obj.email;
+				if (!firebase.auth().currentUser) {
+					document.querySelector("#feedback").innerHTML ='signing firebase';
+					firebase.auth().signInWithCredential(firebase.auth.GoogleAuthProvider.credential(obj.idToken))
+					.then((success) => {
+						console.log("success: " + JSON.stringify(success)); // to long json to put it in #feedback
+					})
+					.catch((error) => {
+							document.querySelector("#feedback").innerHTML = "error0: " + JSON.stringify(error);
+						  });
+				}else{
+					document.querySelector("#feedback").innerHTML ='error1: already sigend in firebase';
+				}
+			},
+			function (msg) {
+			  document.querySelector("#feedback").innerHTML = "error2: " + msg;
+			}
+		);
+	  }
+	  function isAvailable() {
+		window.plugins.googleplus.isAvailable(function(avail) {alert(avail)});
+	  }
+
+	</script>
+</body>
+
+</html>
